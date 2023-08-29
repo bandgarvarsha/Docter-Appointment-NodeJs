@@ -1,9 +1,9 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const { secretKey } = require("../Auth/config");
+const { secretKey } = require("./Auth/config");
 const cors = require("cors");
-const auth = require("../Auth/auth");
-const doctersList = require("../doctorsList.json");
+const auth = require("./Auth/auth");
+const doctersList = require("./doctorsList.json");
 const { MongoClient } = require("mongodb");
 
 const app = express();
