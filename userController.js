@@ -35,51 +35,62 @@ const corsOptions = {
 app.use(cors(corsOptions));
 const PORT = 5000;
 
-const users = [
-  {
-    emailId: "bandgarvarsha@gmail.com",
-    password: "abc123",
-    role: "user",
-  },
-  {
-    emailId: "vijay@gmail.com",
-    password: "abc123",
-    role: "admin",
-  },
-  {
-    emailId: "bandgaronkar16@gmail.com",
-    password: "abc123",
-    role: "user",
-  },
-];
+// const users = [
+//   {
+//     emailId: "bandgarvarsha@gmail.com",
+//     password: "abc123",
+//     role: "user",
+//   },
+//   {
+//     emailId: "vijay@gmail.com",
+//     password: "abc123",
+//     role: "admin",
+//   },
+//   {
+//     emailId: "bandgaronkar16@gmail.com",
+//     password: "abc123",
+//     role: "user",
+//   },
+// ];
 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
   const { emailId, password } = req.body;
-  const user = users.find((usr) => {
-    return usr.emailId === emailId && usr.password === password ? usr : false;
-  });
 
-  if (user) {
-    const authToken = jwt.sign(
-      {
-        emailId: user.emailId,
-        role: user.role,
-        exp: Math.floor(Date.now() / 1000) + 10 * 60,
-      },
-      secretKey
-    );
-    res.send({ Token: authToken, user });
-  } else {
-    res.send("Email and Password invalid");
-  }
+  const db = client.db("docter");
+  const collection = db.collection("registration");
+  // console.log("connected", collection);
+  await collection
+    .findOne({ emailId: emailId })
+    .then((response) => {
+      if (response) {
+        const authToken = jwt.sign(
+          {
+            emailId: response.emailId,
+            role: response.role,
+            exp: Math.floor(Date.now() / 1000) + 10 * 60,
+          },
+          secretKey
+        );
+        console.log(response);
+        let user = {
+          jwt: authToken,
+          fullname: response.fullName,
+          id: response._id,
+        };
+        res.send(user);
+      }
+    })
+    .catch((error) => {
+      res.send(error);
+    });
 });
 
 const isExists = async (emailId) => {
   const db = client.db("docter");
   const collection = db.collection("registration");
-  const email = await collection.find({ emailId: emailId }).toArray();
-  console.log(email);
-  email.length > 0 ? true : false;
+  const count = await collection.countDocuments({ emailId: emailId });
+  const emailCount = count > 0 ? true : false;
+  return emailCount;
 };
 
 // select countClick
@@ -90,17 +101,17 @@ const isValidEmail = (emailId) => {
   return test;
 };
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
   const { fullName, address, mobileNo, emailId, password } = req.body;
-
+  console.log(await isExists(emailId));
   if (!fullName || !address || !mobileNo || !emailId || !password) {
-    res.send({ status: 400, message: "All fields are required" });
+    res.status(400).send({ message: "All fields are required" });
   } else if (!isValidEmail(emailId)) {
-    res.send({ status: 409, message: "Email Not Valid" });
-  } else if (isExists(emailId)) {
+    res.status(409).send({ message: "Email Not Valid" });
+  } else if (await isExists(emailId)) {
     res.status(409).send({ message: "Email already exists" });
   } else if (!mobileNo) {
-    res.send({ status: 409, message: "Mobile number is not valid" });
+    res.status(409).send({ message: "Mobile number is not valid" });
   } else {
     // registeredUsers.push({
     //   fullName,
