@@ -7,8 +7,46 @@
     "address": "Pimpri-Chinchwad,Pune",
     "mobile": 8767760170,
     "specialty": "Dentist",
-    "experience": "25 Years Experience Overall",
-    "info": "Dr. Hemant Sharma has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele"
+    "experience": "s",
+    "data": [
+      {
+        "date": "2023-09-10",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "03:00 PM", "available": true },
+          { "id": 5, "start": "05:00 PM", "available": true },
+          { "id": 6, "start": "06:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "2023-09-11",
+        "slots": [
+          { "id": 1, "start": "03:00 PM", "available": true },
+          { "id": 2, "start": "05:00 PM", "available": true },
+          { "id": 3, "start": "06:00 PM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "2023-09-12",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false }
+        ]
+      }
+    ]
   },
   {
     "id": 2,
@@ -19,7 +57,47 @@
     "mobile": 7276621071,
     "specialty": "Ayurveda",
     "experience": "17 Years Experience Overall",
-    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele"
+    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele",
+    "data": [
+      {
+        "date": "02/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "03:00 PM", "available": true },
+          { "id": 5, "start": "05:00 PM", "available": true },
+          { "id": 6, "start": "06:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false },
+          { "id": 9, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "03/09/2023",
+        "slots": [
+          { "id": 1, "start": "03:00 PM", "available": true },
+          { "id": 2, "start": "05:00 PM", "available": true },
+          { "id": 3, "start": "06:00 PM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "04/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false }
+        ]
+      }
+    ]
   },
   {
     "id": 3,
@@ -30,7 +108,16 @@
     "mobile": 866945278,
     "specialty": "Homeopathy",
     "experience": "10 Years Experience Overall",
-    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele"
+    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele",
+    "slots": [
+      { "id": 1, "start": "8:00 AM", "end": "9:00 AM", "available": true },
+      { "id": 2, "start": "9:00 AM", "end": "10:00 AM", "available": true },
+      { "id": 3, "start": "12:00 PM", "end": "01:00 PM", "available": false },
+      { "id": 4, "start": "01:00 PM", "end": "02:00 PM", "available": true },
+      { "id": 5, "start": "05:00 PM", "end": "06:00 PM", "available": true },
+      { "id": 6, "start": "06:00 PM", "end": "07:00 PM", "available": false },
+      { "id": 7, "start": "07:00 PM", "end": "08:00 PM", "available": false }
+    ]
   },
   {
     "id": 4,
@@ -41,7 +128,16 @@
     "mobile": 9678255565,
     "specialty": "Homeopathy",
     "experience": "10 Years Experience Overall",
-    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele"
+    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele",
+    "slots": [
+      { "id": 1, "start": "8:00 AM", "end": "9:00 AM", "available": true },
+      { "id": 2, "start": "9:00 AM", "end": "10:00 AM", "available": true },
+      { "id": 3, "start": "11:00 AM", "end": "12:00 PM", "available": false },
+      { "id": 4, "start": "03:00 PM", "end": "04:00 PM", "available": true },
+      { "id": 5, "start": "05:00 PM", "end": "06:00 PM", "available": true },
+      { "id": 6, "start": "06:00 PM", "end": "07:00 PM", "available": false },
+      { "id": 7, "start": "08:00 PM", "end": "09:00 PM", "available": true }
+    ]
   },
   {
     "id": 5,
@@ -52,7 +148,47 @@
     "mobile": 8669452782,
     "specialty": "Naturopathy ",
     "experience": "13 Years Experience Overall",
-    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele"
+    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele",
+    "data": [
+      {
+        "date": "02/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "03:00 PM", "available": true },
+          { "id": 5, "start": "05:00 PM", "available": true },
+          { "id": 6, "start": "06:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false },
+          { "id": 9, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "03/09/2023",
+        "slots": [
+          { "id": 1, "start": "03:00 PM", "available": true },
+          { "id": 2, "start": "05:00 PM", "available": true },
+          { "id": 3, "start": "06:00 PM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "04/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false }
+        ]
+      }
+    ]
   },
   {
     "id": 6,
@@ -63,7 +199,47 @@
     "mobile": 96782546282,
     "specialty": "Neurology",
     "experience": "7 Years Experience Overall",
-    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele"
+    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele",
+    "data": [
+      {
+        "date": "02/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "03:00 PM", "available": true },
+          { "id": 5, "start": "05:00 PM", "available": true },
+          { "id": 6, "start": "06:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false },
+          { "id": 9, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "03/09/2023",
+        "slots": [
+          { "id": 1, "start": "03:00 PM", "available": true },
+          { "id": 2, "start": "05:00 PM", "available": true },
+          { "id": 3, "start": "06:00 PM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "04/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false }
+        ]
+      }
+    ]
   },
   {
     "id": 7,
@@ -74,6 +250,46 @@
     "mobile": 8656243981,
     "specialty": "Medicine",
     "experience": "22 Years Experience Overall",
-    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele"
+    "info": "Dr. Jyoti Bhirud has completed her graduation in dentistry (B.D.S.) from Government Dental College, Nagpur in 1995 and is considered as the best dentist in Pune and PCMC. A specialist in Dental Implants, Root Canal treatment, Cosmetic dentistry, Dr. Jyoti Bhirud also a well-known Pediatric Dentist in Pune and is in private practice since last 16 years. An expert in counselling patients, Dr. Jyoti Bhirud motivates patients for dental treatment and keeping good oral hygiene. She constantly tries to ele",
+    "data": [
+      {
+        "date": "02/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "03:00 PM", "available": true },
+          { "id": 5, "start": "05:00 PM", "available": true },
+          { "id": 6, "start": "06:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false },
+          { "id": 9, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "03/09/2023",
+        "slots": [
+          { "id": 1, "start": "03:00 PM", "available": true },
+          { "id": 2, "start": "05:00 PM", "available": true },
+          { "id": 3, "start": "06:00 PM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false }
+        ]
+      },
+      {
+        "date": "04/09/2023",
+        "slots": [
+          { "id": 1, "start": "9:00 AM", "available": true },
+          { "id": 2, "start": "10:00 AM", "available": true },
+          { "id": 3, "start": "11:00 AM", "available": false },
+          { "id": 4, "start": "08:00 PM", "available": false },
+          { "id": 5, "start": "08:00 PM", "available": false },
+          { "id": 6, "start": "08:00 PM", "available": false },
+          { "id": 7, "start": "08:00 PM", "available": false },
+          { "id": 8, "start": "08:00 PM", "available": false }
+        ]
+      }
+    ]
   }
 ]
