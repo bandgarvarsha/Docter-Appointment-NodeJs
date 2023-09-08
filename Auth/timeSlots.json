@@ -1,0 +1,5 @@
+[
+  { "id": 1, "start": "9:00 AM", "end": "10:00 AM", "available": true },
+  { "id": 2, "start": "10:00 AM", "end": "11:00 AM", "available": true },
+  { "id": 3, "start": "11:00 AM", "end": "12:00 PM", "available": false }
+]
