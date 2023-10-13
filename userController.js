@@ -14,13 +14,13 @@ const url =
   "mongodb+srv://bandgarvarsha123:Wz3euzppPOVuqt19@cluster0.mynuvqs.mongodb.net/";
 const client = new MongoClient(url, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  //useUnifiedTopology: true,
 });
 
 const connectDb = async () => {
   try {
     await client.connect();
-    console.log("Connected");
+    console.log("Connected to the databse");
   } catch (err) {
     console.log(err);
   }
@@ -100,16 +100,7 @@ app.post("/signup", async (req, res) => {
     res.status(409).send({ message: "Email already exists" });
   } else if (!mobileNo) {
     res.status(409).send({ message: "Mobile number is not valid" });
-  }
-  // } else {
-  //   if (id) {
-  //     /* author : varsha
-  //       task:Update user by Id
-  //     */
-
-  //     return res.send({ status: 200, message: "User updated.." });
-  //   }
-  else {
+  } else {
     //logic for create new user
     async function createDocument(databaseName, collectionName, document) {
       const db = client.db(databaseName);
@@ -155,7 +146,7 @@ app.get("/docterProfile/:id", async (req, res) => {
   const collection = db.collection("docterRegistration");
 
   const id = req.params.id.trim();
-  console.log("id", id);
+  //console.log("id", id);
   await collection
     .findOne({ _id: new ObjectId(id) })
     .then((response) => {
@@ -168,6 +159,7 @@ app.get("/docterProfile/:id", async (req, res) => {
 });
 
 //fetchUserById
+
 app.get("/updateUserProfile/:id", async (req, res) => {
   const db = client.db("docter");
   const collection = db.collection("registration");
@@ -197,6 +189,8 @@ app.post("/docterRegistration", (req, res) => {
     phoneNumber,
     experience,
     information,
+    emailId,
+    password,
   } = req.body;
   async function createDocument(databaseName, collectionName, document) {
     const db = client.db(databaseName);
@@ -218,39 +212,126 @@ app.post("/docterRegistration", (req, res) => {
     phoneNumber,
     experience,
     information,
+    emailId,
+    password,
   });
 });
 
-app.get("/", (req, res) => {
+app.post("/docterLogin", async (req, res) => {
+  const { emailId, password } = req.body;
+
+  const db = client.db("docter");
+  const collection = db.collection("docterRegistration");
+
+  await collection
+    .findOne({ emailId: emailId, password: password })
+    .then((response) => {
+      if (response) {
+        const authToken = jwt.sign(
+          {
+            emailId: response.emailId,
+            role: response.role,
+          },
+          secretKey
+        );
+
+        console.log("Response", response);
+
+        let user = {
+          Token: authToken,
+          fullName: response.fullName,
+          id: response._id,
+        };
+        res.send(user);
+      } else {
+        res.status(401).send({ message: "Invalid credientials" });
+      }
+    })
+    .catch((err) => {
+      res.send(err.message);
+    });
+});
+
+/*
+getting docters slot
+payload {did,date}
+*/
+
+app.post("/saveSlots", (req, res) => {
+  const { docterId, sDate, selectedSlots } = req.body;
+
+  const dId = new ObjectId(docterId);
   async function createDocument(databaseName, collectionName, document) {
     const db = client.db(databaseName);
     const collection = db.collection(collectionName);
 
     try {
-      const result = await collection.insertOne(document);
-      console.log("Document inserted:", result.insertedId);
-      console.log(result);
+      const slotCount = await collection.countDocuments({
+        // check exixst or not
+        dId: new ObjectId(dId),
+        sDate,
+      });
+      console.log("REs", res);
+
+      if (slotCount > 0) {
+        const updateSlot = await collection.updateOne(
+          // used to update the slots
+          { dId: new ObjectId(dId), sDate },
+          { $set: { selectedSlots: selectedSlots } }
+        );
+        res.status(200).send({ message: "Slots saved." });
+      } else {
+        const result = await collection.insertOne(document);
+        console.log("Document inserted", result.insertedId);
+        console.log(result);
+      }
     } catch (error) {
-      console.error("Error inserting document:", error);
+      console.log("Error", error);
     }
   }
-
-  // Usage
-  createDocument("mydb", "mycollection", { name: "John", age: 30 });
+  createDocument("docter", "availableSlots", {
+    dId,
+    sDate,
+    selectedSlots,
+  });
+  console.log(sDate, selectedSlots);
 });
 
-app.get("/mongo", async (req, res) => {
-  const collectionName = client.db("mydb").collection("mycollection");
-  // const collection = db.collection("mycollection");
-
-  const col = await collectionName.find().toArray();
-  console.log("col", col);
-  res.send(col);
-});
-
-app.get("/timeSlots", (req, res) => {
+app.get("/allSlots/:id/:date", async (req, res) => {
   console.log("TimeSlots : ", timeSlots);
-  res.send(timeSlots);
+  const db = client.db("docter");
+  const collection = db.collection("availableSlots");
+  const id = req.params.id.trim();
+  const date = req.params.date;
+
+  console.log("Id", id);
+
+  const isValidObjectId = /^[0-9a-fA-F]{24}$/.test(id);
+  if (!isValidObjectId) {
+    console.log("Invalid ObjectId");
+    return res.status(400).send("Invalid ObjectId");
+  }
+
+  try {
+    const db = client.db("docter");
+    const collection = db.collection("availableSlots");
+
+    const savedSlots = await collection.findOne({
+      dId: new ObjectId(id),
+      sDate: date,
+    });
+
+    console.log("saved", savedSlots);
+    if (savedSlots !== null) {
+      res.send({ savedSlots: savedSlots.selectedSlots, timeSlots });
+    } else {
+      res.send({ savedSlots: [], timeSlots });
+    }
+  } catch (err) {
+    res.status(500).send({ message: `Internal server error ${err}` });
+  }
+
+  //res.send(timeSlots);
 });
 
 app.listen(PORT, () => {
